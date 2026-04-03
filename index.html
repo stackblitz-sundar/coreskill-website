@@ -316,7 +316,7 @@
         messageTextError: document.getElementById("messageTextError")
     };
 
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbybplbHknBhOPvzlQ_v4HxneiaCczgjNVfD3feESh2VTWNXTS-FMLa2IbUuZZAmC1Y1/exec";
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzqoVuqvy_T06fHp3hBGY9VlieoY4ZdJ3V-qFXjbbYzrvh1G_FD9NUxMwnI6IlwX2Bs/exec";
 
     function setError(input, errorElement, message) {
         input.classList.add("input-error");
@@ -428,9 +428,10 @@
             if (result.result !== "success") {
                 throw new Error(result.message || "Google Sheets save failed.");
             }
-
+console.log("Saved to sheet:", result);
             formMessage.textContent = "Saved to sheet successfully. Sending email...";
             formMessage.className = "success";
+            
 
             leadForm.submit();
 
