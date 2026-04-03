@@ -316,7 +316,7 @@
         messageTextError: document.getElementById("messageTextError")
     };
 
-    const GOOGLE_SCRIPT_URL = "PASTE_YOUR_EXEC_URL_HERE";
+    const GOOGLE_SCRIPT_URL = https://script.google.com/macros/s/AKfycbybplbHknBhOPvzlQ_v4HxneiaCczgjNVfD3feESh2VTWNXTS-FMLa2IbUuZZAmC1Y1/exec;
 
     function setError(input, errorElement, message) {
         input.classList.add("input-error");
@@ -405,14 +405,14 @@
             return;
         }
 
-        const payload = {
-            name: fields.fullName.value.trim(),
-            email: fields.emailAddress.value.trim(),
-            phone: fields.phoneNumber.value.trim(),
-            status: fields.currentStatus.value.trim(),
-            preferred_contact: fields.preferredContact.value.trim(),
-            message: fields.messageText.value.trim()
-        };
+      const payload = {
+    name: fields.fullName.value.trim(),
+    email: fields.emailAddress.value.trim(),
+    phone: fields.phoneNumber.value.trim(),
+    status: fields.currentStatus.value.trim(),
+    contact: fields.preferredContact.value.trim(),
+    message: fields.messageText.value.trim()
+};
 
         try {
             const response = await fetch(GOOGLE_SCRIPT_URL, {
