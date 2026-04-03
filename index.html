@@ -294,7 +294,7 @@
     <p>© 2026 CoreSkill Learning Centre | UK</p>
 </footer>
 
-<!-- JAVASCRIPT -->
+<!-- JAVASCRIPT 
 <script>
     function scrollToContact() {
         document.getElementById("contact").scrollIntoView();
@@ -304,6 +304,164 @@
         e.preventDefault();
         document.getElementById("msg").innerText = "Message sent successfully!";
     }
+</script>-->
+    <script>
+    function scrollToContact() {
+        document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function scrollToDataAnalytics() {
+        document.getElementById("data-analytics").scrollIntoView({ behavior: "smooth" });
+    }
+
+    const leadForm = document.getElementById("leadForm");
+    const formMessage = document.getElementById("formMessage");
+    const submitBtn = document.getElementById("submitBtn");
+
+    const fields = {
+        fullName: document.getElementById("fullName"),
+        emailAddress: document.getElementById("emailAddress"),
+        phoneNumber: document.getElementById("phoneNumber"),
+        currentStatus: document.getElementById("currentStatus"),
+        preferredContact: document.getElementById("preferredContact"),
+        messageText: document.getElementById("messageText")
+    };
+
+    const errors = {
+        fullNameError: document.getElementById("fullNameError"),
+        emailAddressError: document.getElementById("emailAddressError"),
+        phoneNumberError: document.getElementById("phoneNumberError"),
+        currentStatusError: document.getElementById("currentStatusError"),
+        preferredContactError: document.getElementById("preferredContactError"),
+        messageTextError: document.getElementById("messageTextError")
+    };
+
+    function setError(input, errorElement, message) {
+        input.classList.add("input-error");
+        input.classList.remove("input-success");
+        errorElement.textContent = message;
+    }
+
+    function setSuccess(input, errorElement) {
+        input.classList.remove("input-error");
+        input.classList.add("input-success");
+        errorElement.textContent = "";
+    }
+
+    function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+    }
+
+    function validateUKPhone(phone) {
+        return /^[0-9+\s()-]{8,20}$/.test(phone.trim());
+    }
+
+    function validateForm() {
+        let isValid = true;
+
+        const fullName = fields.fullName.value.trim();
+        const email = fields.emailAddress.value.trim();
+        const phone = fields.phoneNumber.value.trim();
+        const currentStatus = fields.currentStatus.value.trim();
+        const preferredContact = fields.preferredContact.value.trim();
+        const message = fields.messageText.value.trim();
+
+        if (fullName.length < 3) {
+            setError(fields.fullName, errors.fullNameError, "Please enter your full name.");
+            isValid = false;
+        } else {
+            setSuccess(fields.fullName, errors.fullNameError);
+        }
+
+        if (!validateEmail(email)) {
+            setError(fields.emailAddress, errors.emailAddressError, "Please enter a valid email address.");
+            isValid = false;
+        } else {
+            setSuccess(fields.emailAddress, errors.emailAddressError);
+        }
+
+        if (phone !== "" && !validateUKPhone(phone)) {
+            setError(fields.phoneNumber, errors.phoneNumberError, "Please enter a valid phone number.");
+            isValid = false;
+        } else {
+            setSuccess(fields.phoneNumber, errors.phoneNumberError);
+        }
+
+        if (currentStatus === "") {
+            setError(fields.currentStatus, errors.currentStatusError, "Please select your current status.");
+            isValid = false;
+        } else {
+            setSuccess(fields.currentStatus, errors.currentStatusError);
+        }
+
+        if (preferredContact === "") {
+            setError(fields.preferredContact, errors.preferredContactError, "Please select your preferred contact method.");
+            isValid = false;
+        } else {
+            setSuccess(fields.preferredContact, errors.preferredContactError);
+        }
+
+        if (message.length < 10) {
+            setError(fields.messageText, errors.messageTextError, "Please enter at least 10 characters.");
+            isValid = false;
+        } else {
+            setSuccess(fields.messageText, errors.messageTextError);
+        }
+
+        return isValid;
+    }
+
+    leadForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        formMessage.textContent = "";
+        formMessage.className = "";
+
+        if (!validateForm()) {
+            formMessage.textContent = "Please fix the highlighted fields and try again.";
+            formMessage.className = "error";
+            return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
+
+        try {
+            const formData = new FormData(leadForm);
+
+            const response = await fetch(leadForm.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    Accept: "application/json"
+                }
+            });
+
+            if (response.ok) {
+                formMessage.textContent = "Thank you. Your enquiry has been sent successfully.";
+                formMessage.className = "success";
+                leadForm.reset();
+
+                Object.values(fields).forEach((field) => {
+                    field.classList.remove("input-success");
+                    field.classList.remove("input-error");
+                });
+
+                Object.values(errors).forEach((error) => {
+                    error.textContent = "";
+                });
+            } else {
+                formMessage.textContent = "Sorry, something went wrong. Please try again or contact us on WhatsApp.";
+                formMessage.className = "error";
+            }
+        } catch (error) {
+            formMessage.textContent = "Network error. Please try again or contact us on WhatsApp.";
+            formMessage.className = "error";
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Send Enquiry";
+        }
+    });
 </script>
 
 </body>
