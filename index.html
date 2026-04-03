@@ -316,6 +316,8 @@
         messageTextError: document.getElementById("messageTextError")
     };
 
+    const GOOGLE_SCRIPT_URL = "PASTE_YOUR_EXEC_URL_HERE";
+
     function setError(input, errorElement, message) {
         input.classList.add("input-error");
         input.classList.remove("input-success");
@@ -392,39 +394,52 @@
     }
 
     leadForm.addEventListener("submit", async function (e) {
-    e.preventDefault();
+        e.preventDefault();
 
-    formMessage.textContent = "";
+        formMessage.textContent = "";
+        formMessage.className = "";
 
-    if (!validateForm()) return;
+        if (!validateForm()) {
+            formMessage.textContent = "Please fix the highlighted fields and try again.";
+            formMessage.className = "error";
+            return;
+        }
 
-    const data = {
-        name: fields.fullName.value,
-        email: fields.emailAddress.value,
-        phone: fields.phoneNumber.value,
-        status: fields.currentStatus.value,
-        preferred_contact: fields.preferredContact.value,
-        message: fields.messageText.value
-    };
+        const payload = {
+            name: fields.fullName.value.trim(),
+            email: fields.emailAddress.value.trim(),
+            phone: fields.phoneNumber.value.trim(),
+            status: fields.currentStatus.value.trim(),
+            preferred_contact: fields.preferredContact.value.trim(),
+            message: fields.messageText.value.trim()
+        };
 
-    try {
-        // 1. SAVE TO GOOGLE SHEETS
-        await fetch(https://script.google.com/macros/s/AKfycbxsNIfB5Ydsf8xPVGWrGLp4AzyT3FD348gqrGrEjYWLDk15hf9y7WqHM7KxpHp1YD6-/exec, {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: {
-                "Content-Type": "application/json"
+        try {
+            const response = await fetch(GOOGLE_SCRIPT_URL, {
+                method: "POST",
+                body: JSON.stringify(payload),
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8"
+                }
+            });
+
+            const result = await response.json();
+
+            if (result.result !== "success") {
+                throw new Error(result.message || "Google Sheets save failed.");
             }
-        });
 
-        // 2. SEND EMAIL (FormSubmit)
-        leadForm.submit();
+            formMessage.textContent = "Saved to sheet successfully. Sending email...";
+            formMessage.className = "success";
 
-    } catch (error) {
-        formMessage.textContent = "Error saving data.";
-        formMessage.className = "error";
-    }
-});
+            leadForm.submit();
+
+        } catch (error) {
+            formMessage.textContent = "Excel save failed: " + error.message;
+            formMessage.className = "error";
+            console.error(error);
+        }
+    });
 </script>
 
 </body>
