@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job-Ready Data Analytics Course in 8 Weeks | CoreSkill Institute Ltd</title>
+  <meta
+    name="description"
+    content="Become job-ready in data analytics in just 8 weeks. Learn Excel, SQL, Power BI and Python with practical, beginner-friendly training from CoreSkill Institute Ltd."
+  />
+  <style>
+    :root {
+      --primary: #0f4c81;
+      --secondary: #ff8c42;
+      --bg: #f7f9fc;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --white: #ffffff;
+      --border: #e5e7eb;
+      --success: #e8f5e9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.3s ease;
+      margin-right: 12px;
+      margin-bottom: 12px;
+    }
+
+    .btn-primary {
+      background: var(--secondary);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.92;
+    }
+
+    .btn-outline {
+      border: 2px solid var(--white);
+      color: var(--white);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    .section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto 40px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(15,76,129,0.95), rgba(18,110,160,0.92));
+      color: var(--white);
+      padding: 90px 0 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 24px;
+      max-width: 680px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      padding: 10px 14px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+    }
+
+    .hero-card,
+    .card {
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+
+    .hero-card {
+      padding: 28px;
+      color: var(--text);
+    }
+
+    .hero-card h3 {
+      color: var(--primary);
+      margin-bottom: 14px;
+      font-size: 1.5rem;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      margin-bottom: 18px;
+    }
+
+    .hero-card li {
+      margin-bottom: 10px;
+      padding-left: 22px;
+      position: relative;
+    }
+
+    .hero-card li::before {
+      content: "✔";
+      color: var(--secondary);
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: bold;
+    }
+
+    .grid-3,
+    .grid-4,
+    .grid-2 {
+      display: grid;
+      gap: 24px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      height: 100%;
+    }
+
+    .card h3,
+    .card h4 {
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .feature-list,
+    .tick-list {
+      list-style: none;
+    }
+
+    .feature-list li,
+    .tick-list li {
+      padding-left: 24px;
+      position: relative;
+      margin-bottom: 12px;
+    }
+
+    .feature-list li::before,
+    .tick-list li::before {
+      content: "✔";
+      color: var(--secondary);
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: bold;
+    }
+
+    .course-plan .card {
+      border-top: 5px solid var(--secondary);
+    }
+
+    .highlight {
+      background: var(--success);
+      padding: 18px 20px;
+      border-left: 5px solid #43a047;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .salary-box {
+      text-align: center;
+      background: var(--primary);
+      color: var(--white);
+      padding: 28px;
+      border-radius: 16px;
+      margin-top: 30px;
+    }
+
+    .salary-box h3 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #0f4c81, #0d638f);
+      color: var(--white);
+      text-align: center;
+      padding: 70px 0;
+    }
+
+    .cta h2 {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      max-width: 760px;
+      margin: 0 auto 24px;
+    }
+
+    .form-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    form {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px 14px;
+      border: 1px solid #cfd8e3;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--primary);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    .faq-item h4 {
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    footer {
+      background: #0b2033;
+      color: #d8e2ea;
+      padding: 26px 0;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .small-note {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    @media (max-width: 992px) {
+      .hero-grid,
+      .grid-4,
+      .grid-3,
+      .grid-2,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .section-title {
+        font-size: 1.75rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero {
+        padding-top: 70px;
+      }
+
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+      }
+
+      form {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Become Job-Ready in Data Analytics in Just 8 Weeks</h1>
+        <p>
+          Learn Excel, SQL, Power BI and Python through practical, beginner-friendly
+          training designed to help you build real job-ready skills and move toward
+          entry-level data analytics roles.
+        </p>
+
+        <a href="#apply" class="btn btn-primary">Apply Now</a>
+        <a href="#apply" class="btn btn-outline">Book Free Consultation</a>
+
+        <div class="hero-badges">
+          <span class="badge">Beginner Friendly</span>
+          <span class="badge">Practical Training</span>
+          <span class="badge">Career-Focused</span>
+          <span class="badge">UK-Based Support</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>What You’ll Get</h3>
+        <ul>
+          <li>8-week structured learning plan</li>
+          <li>Hands-on projects and exercises</li>
+          <li>Excel, SQL, Power BI and Python basics</li>
+          <li>CV, LinkedIn and interview guidance</li>
+          <li>Support for career changers and beginners</li>
+        </ul>
+        <a href="#apply" class="btn btn-primary" style="width:100%; text-align:center;">Secure Your Interest</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Who This Course Is For</h2>
+      <p class="section-subtitle">
+        This course is designed for learners who want a practical and structured route into data analytics.
+      </p>
+
+      <div class="grid-4">
+        <div class="card">
+          <h3>Beginners</h3>
+          <p>No previous technical experience required. Start from the fundamentals and build confidence step by step.</p>
+        </div>
+        <div class="card">
+          <h3>Career Changers</h3>
+          <p>Ideal for those moving from admin, retail, customer service, operations or other non-technical roles.</p>
+        </div>
+        <div class="card">
+          <h3>Students & Graduates</h3>
+          <p>Build practical skills that strengthen your employability and help you stand out in the job market.</p>
+        </div>
+        <div class="card">
+          <h3>Working Professionals</h3>
+          <p>Upskill with tools and techniques that are highly relevant in today’s data-driven workplaces.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU'LL LEARN -->
+  <section class="section" style="background:#ffffff;">
+    <div class="container">
+      <h2 class="section-title">What You Will Learn</h2>
+      <p class="section-subtitle">
+        Build a strong foundation in the most in-demand data analytics tools and concepts.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Core Technical Skills</h3>
+          <ul class="tick-list">
+            <li>Microsoft Excel for data cleaning, sorting, formulas and analysis</li>
+            <li>SQL for querying databases and handling structured data</li>
+            <li>Power BI for dashboards, reporting and visual storytelling</li>
+            <li>Python basics for data analysis and simple automation</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Practical Job-Ready Skills</h3>
+          <ul class="tick-list">
+            <li>Real business case exercises and mini-projects</li>
+            <li>Data interpretation and insight communication</li>
+            <li>Confidence in presenting findings clearly</li>
+            <li>Career preparation with CV and interview support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 WEEK PLAN -->
+  <section class="section course-plan">
+    <div class="container">
+      <h2 class="section-title">Your 8-Week Learning Plan</h2>
+      <p class="section-subtitle">
+        A structured journey designed to move you from beginner level toward job-ready confidence.
+      </p>
+
+      <div class="grid-4">
+        <div class="card">
+          <h4>Weeks 1–2</h4>
+          <p><strong>Excel Fundamentals</strong><br />Learn data basics, spreadsheets, formulas, cleaning, sorting, filtering and reports.</p>
+        </div>
+        <div class="card">
+          <h4>Weeks 3–4</h4>
+          <p><strong>SQL Essentials</strong><br />Understand databases and practise writing queries to retrieve and analyse data.</p>
+        </div>
+        <div class="card">
+          <h4>Weeks 5–6</h4>
+          <p><strong>Power BI Dashboards</strong><br />Create visual reports, dashboards and business insights using data storytelling techniques.</p>
+        </div>
+        <div class="card">
+          <h4>Weeks 7–8</h4>
+          <p><strong>Python + Career Prep</strong><br />Learn Python basics for analytics, complete a final project and prepare for job applications.</p>
+        </div>
+      </div>
+
+      <div class="highlight">
+        By the end of the course, you will have practical exposure to industry-relevant tools and a stronger foundation for entry-level analytics opportunities.
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section" style="background:#ffffff;">
+    <div class="container">
+      <h2 class="section-title">Why Choose CoreSkill Institute Ltd?</h2>
+      <p class="section-subtitle">
+        We focus on practical learning that helps you build skills that employers value.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Practical Approach</h3>
+          <p>We emphasise hands-on learning, guided exercises and real-world style tasks rather than just theory.</p>
+        </div>
+        <div class="card">
+          <h3>Beginner-Friendly Delivery</h3>
+          <p>Our training is designed for learners who need a clear, supportive and step-by-step route into the subject.</p>
+        </div>
+        <div class="card">
+          <h3>Career-Focused Structure</h3>
+          <p>The course is built around developing skills that support job readiness, confidence and portfolio building.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREER OUTCOMES -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Career Outcomes</h2>
+      <p class="section-subtitle">
+        This course is designed to support your progress toward entry-level opportunities in data-related roles.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Data Analyst</h3>
+          <p>Work with data, build reports, interpret trends and support decision-making.</p>
+        </div>
+        <div class="card">
+          <h3>Reporting Analyst</h3>
+          <p>Create dashboards and reports that help organisations track performance and insights.</p>
+        </div>
+        <div class="card">
+          <h3>BI / Junior Analytics Roles</h3>
+          <p>Use business intelligence tools to visualise data and communicate findings effectively.</p>
+        </div>
+      </div>
+
+      <div class="salary-box">
+        <h3>Build Toward Roles in a Growing Field</h3>
+        <p>Gain practical skills in tools widely used across data-driven organisations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background:#ffffff;">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">
+        Here are answers to some common questions from prospective learners.
+      </p>
+
+      <div class="faq-item">
+        <h4>Do I need previous experience in IT or coding?</h4>
+        <p>No. This course is designed for beginners and starts with core fundamentals before moving into tools and practical tasks.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>How long is the course?</h4>
+        <p>The course is designed to be completed over 8 weeks.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>What tools will I learn?</h4>
+        <p>You will learn Excel, SQL, Power BI and Python basics for data analytics.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Is the course practical?</h4>
+        <p>Yes. The learning approach focuses on hands-on exercises, applied tasks and project-based practice.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Will there be support for jobs and applications?</h4>
+        <p>Yes. The course includes support with CV improvement, LinkedIn guidance and interview preparation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Start Your Data Analytics Journey Today</h2>
+      <p>
+        Take the first step toward building practical, job-ready skills in data analytics.
+        Submit your interest below and our team will contact you.
+      </p>
+      <a href="#apply" class="btn btn-primary">Apply Now</a>
+      <a href="#apply" class="btn btn-outline">Request More Information</a>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="section" id="apply">
+    <div class="container">
+      <h2 class="section-title">Apply or Request Information</h2>
+      <p class="section-subtitle">
+        Fill in the form below and we will contact you with details about the course and next steps.
+      </p>
+
+      <div class="form-wrap">
+        <form action="#" method="post">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email address" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" />
+            </div>
+
+            <div class="form-group">
+              <label for="status">Current Status</label>
+              <select id="status" name="status" required>
+                <option value="">Select your current status</option>
+                <option value="student">Student</option>
+                <option value="graduate">Graduate</option>
+                <option value="job-seeker">Job Seeker</option>
+                <option value="career-changer">Career Changer</option>
+                <option value="working-professional">Working Professional</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="interest">Why are you interested in this course?</label>
+            <textarea id="interest" name="interest" placeholder="Tell us briefly why you are interested"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="contactMethod">Preferred Contact Method</label>
+            <select id="contactMethod" name="contactMethod">
+              <option value="">Select one</option>
+              <option value="email">Email</option>
+              <option value="phone">Phone</option>
+              <option value="whatsapp">WhatsApp</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="border:none; cursor:pointer;">
+            Submit Your Interest
+          </button>
+
+          <p class="small-note">
+            Replace the form <code>action="#"</code> with your server-side form handler, PHP script, CRM endpoint, or form service URL.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 CoreSkill Institute Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
