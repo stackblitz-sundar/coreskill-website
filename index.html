@@ -203,7 +203,7 @@
     <div class="form-wrap">
         <form
             id="leadForm"
-            class="landing-form"
+            
             action="https://formsubmit.co/coreskilllearningcentre@gmail.com"
             method="POST"
         >
@@ -305,18 +305,13 @@
         document.getElementById("msg").innerText = "Message sent successfully!";
     }
 </script>-->
-    <script>
+   <script>
     function scrollToContact() {
         document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
     }
 
-    function scrollToDataAnalytics() {
-        document.getElementById("data-analytics").scrollIntoView({ behavior: "smooth" });
-    }
-
     const leadForm = document.getElementById("leadForm");
     const formMessage = document.getElementById("formMessage");
-    const submitBtn = document.getElementById("submitBtn");
 
     const fields = {
         fullName: document.getElementById("fullName"),
@@ -411,55 +406,14 @@
         return isValid;
     }
 
-    leadForm.addEventListener("submit", async function (e) {
-        e.preventDefault();
-
+    leadForm.addEventListener("submit", function (e) {
         formMessage.textContent = "";
         formMessage.className = "";
 
         if (!validateForm()) {
+            e.preventDefault();
             formMessage.textContent = "Please fix the highlighted fields and try again.";
             formMessage.className = "error";
-            return;
-        }
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Sending...";
-
-        try {
-            const formData = new FormData(leadForm);
-
-            const response = await fetch(leadForm.action, {
-                method: "POST",
-                body: formData,
-                headers: {
-                    Accept: "application/json"
-                }
-            });
-
-            if (response.ok) {
-                formMessage.textContent = "Thank you. Your enquiry has been sent successfully.";
-                formMessage.className = "success";
-                leadForm.reset();
-
-                Object.values(fields).forEach((field) => {
-                    field.classList.remove("input-success");
-                    field.classList.remove("input-error");
-                });
-
-                Object.values(errors).forEach((error) => {
-                    error.textContent = "";
-                });
-            } else {
-                formMessage.textContent = "Sorry, something went wrong. Please try again or contact us on WhatsApp.";
-                formMessage.className = "error";
-            }
-        } catch (error) {
-            formMessage.textContent = "Network error. Please try again or contact us on WhatsApp.";
-            formMessage.className = "error";
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = "Send Enquiry";
         }
     });
 </script>
