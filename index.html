@@ -160,7 +160,7 @@
     </p>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT 
 <section id="contact">
     <h2>Contact Us</h2>
 
@@ -172,6 +172,97 @@
     </form>
 
     <p id="msg" style="color:green;"></p>
+</section>-->
+    <section id="contact">
+    <h2>Contact Us</h2>
+
+    <div class="form-wrap">
+        <form
+            id="leadForm"
+            class="landing-form"
+            action="https://formsubmit.co/YOUR_EMAIL@example.com"
+            method="POST"
+        >
+            <input type="hidden" name="_subject" value="New Data Analytics Lead - CoreSkill" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="" />
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="Full Name" placeholder="Enter your full name" />
+                    <small class="error-text" id="fullNameError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="emailAddress">Email Address</label>
+                    <input type="email" id="emailAddress" name="Email Address" placeholder="Enter your email address" />
+                    <small class="error-text" id="emailAddressError"></small>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" id="phoneNumber" name="Phone Number" placeholder="Enter your phone number" />
+                    <small class="error-text" id="phoneNumberError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="currentStatus">Current Status</label>
+                    <select id="currentStatus" name="Current Status">
+                        <option value="">Select your current status</option>
+                        <option value="Student">Student</option>
+                        <option value="Graduate">Graduate</option>
+                        <option value="Job Seeker">Job Seeker</option>
+                        <option value="Career Changer">Career Changer</option>
+                        <option value="Working Professional">Working Professional</option>
+                    </select>
+                    <small class="error-text" id="currentStatusError"></small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="preferredContact">Preferred Contact Method</label>
+                <select id="preferredContact" name="Preferred Contact Method">
+                    <option value="">Select one</option>
+                    <option value="Email">Email</option>
+                    <option value="Phone">Phone</option>
+                    <option value="WhatsApp">WhatsApp</option>
+                </select>
+                <small class="error-text" id="preferredContactError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="messageText">Why are you interested in this course?</label>
+                <textarea
+                    id="messageText"
+                    name="Message"
+                    placeholder="Tell us briefly why you are interested in the Data Analytics course"
+                ></textarea>
+                <small class="error-text" id="messageTextError"></small>
+            </div>
+
+            <button class="btn btn-primary" type="submit" id="submitBtn">Send Enquiry</button>
+
+            <a
+                href="https://wa.me/44YOURNUMBER?text=Hi%20I%20am%20interested%20in%20the%208-week%20Data%20Analytics%20course."
+                class="btn btn-outline"
+                style="background:#25D366; color:#fff; border:none; margin-left:10px;"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Chat on WhatsApp
+            </a>
+        </form>
+    </div>
+
+    <p id="formMessage" style="margin-top:15px; font-weight:600;"></p>
+    <p class="small-note">
+        Replace <strong>coreskilllearningcentre@gmail.com</strong> with your real email and
+        <strong>+447442795821</strong> with your WhatsApp number in international format.
+    </p>
 </section>
 
 <!-- FOOTER -->
