@@ -391,16 +391,40 @@
         return isValid;
     }
 
-    leadForm.addEventListener("submit", function (e) {
-        formMessage.textContent = "";
-        formMessage.className = "";
+    leadForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-        if (!validateForm()) {
-            e.preventDefault();
-            formMessage.textContent = "Please fix the highlighted fields and try again.";
-            formMessage.className = "error";
-        }
-    });
+    formMessage.textContent = "";
+
+    if (!validateForm()) return;
+
+    const data = {
+        name: fields.fullName.value,
+        email: fields.emailAddress.value,
+        phone: fields.phoneNumber.value,
+        status: fields.currentStatus.value,
+        preferred_contact: fields.preferredContact.value,
+        message: fields.messageText.value
+    };
+
+    try {
+        // 1. SAVE TO GOOGLE SHEETS
+        await fetch(https://script.google.com/macros/s/AKfycbxsNIfB5Ydsf8xPVGWrGLp4AzyT3FD348gqrGrEjYWLDk15hf9y7WqHM7KxpHp1YD6-/exec, {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+
+        // 2. SEND EMAIL (FormSubmit)
+        leadForm.submit();
+
+    } catch (error) {
+        formMessage.textContent = "Error saving data.";
+        formMessage.className = "error";
+    }
+});
 </script>
 
 </body>
