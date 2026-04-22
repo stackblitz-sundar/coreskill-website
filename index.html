@@ -1,448 +1,91 @@
 <!DOCTYPE html>
-   <!-- Devi developed version  -->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoreSkill Learning Centre</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CoreSkill | Maintenance</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        /* NAVBAR */
-        header {
-            background: #0a2540;
-            color: white;
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            font-size: 20px;
-        }
-
-        nav a {
-            color: white;
-            margin-left: 20px;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        /* HERO */
-        .hero {
-            background: linear-gradient(to right, #007cf0, #00dfd8);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .hero h2 {
-            font-size: 40px;
-        }
-
-        .hero p {
-            font-size: 18px;
-        }
-
-        .btn {
-            background: white;
-            color: #007cf0;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        /* SECTIONS */
-        section {
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .courses {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .card {
-            background: #f5f5f5;
-            padding: 20px;
-            width: 280px;
-            border-radius: 10px;
-        }
-
-        /* CONTACT */
-        input, textarea, select {
-            width: 90%;
-            padding: 10px;
-            margin: 10px 0;
-        }
-
-        footer {
-            background: #0a2540;
-            color: white;
-            padding: 20px;
-        }
-
-        /* MOBILE */
-        @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 28px;
-            }
-
-            nav {
-                display: none;
-            }
-        }
-        .error-text {
-    display: block;
-    color: #d93025;
-    font-size: 13px;
-    margin-top: 6px;
-    text-align: left;
+<style>
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0052cc, #00bcd4);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
 }
 
-.input-error {
-    border: 1px solid #d93025 !important;
-    background: #fff5f5;
+.container {
+    max-width: 600px;
+    padding: 20px;
 }
 
-.input-success {
-    border: 1px solid #2e7d32 !important;
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
-#formMessage.success {
-    color: #2e7d32;
+h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
 }
 
-#formMessage.error {
-    color: #d93025;
+p {
+    font-size: 18px;
+    margin-bottom: 25px;
 }
-    </style>
+
+.loader {
+    border: 4px solid rgba(255,255,255,0.3);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.contact {
+    margin-top: 30px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<header>
-    <h1>CoreSkill</h1>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#courses">Courses</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+<div class="container">
+    <div class="logo">CoreSkill Learning Centre</div>
 
-<!-- HERO -->
-<section class="hero" id="home">
-    <h2>Build Your Future with In-Demand Skills</h2>
-    <p>AI • Data Analytics • Cybersecurity</p>
-    <button class="btn" onclick="scrollToContact()">Enrol Now</button>
-</section>
+    <h1>We’ll Be Back Soon 🚧</h1>
 
-<!-- COURSES -->
-<section id="courses">
-    <h2>Our Courses</h2>
-
-    <div class="courses">
-        <div class="card">
-            <h3>AI & Machine Learning</h3>
-            <p>Learn real-world AI skills with hands-on projects.</p>
-        </div>
-
-        <div class="card">
-            <h3>Data Analytics</h3>
-            <p>Master Excel, Power BI & Python for analytics.</p>
-        </div>
-
-        <div class="card">
-            <h3>Cybersecurity</h3>
-            <p>Protect systems and build a career in security.</p>
-        </div>
-    </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-    <h2>About Us</h2>
     <p>
-        CoreSkill Learning Centre is a UK-based training provider focused on
-        job-ready skills in AI, Data Analytics, and Cybersecurity.
-        We help learners gain practical knowledge and career opportunities.
+        Our website is currently undergoing scheduled maintenance.<br>
+        We’re working hard to improve your experience.
     </p>
-</section>
 
-<!-- CONTACT 
-<section id="contact">
-    <h2>Contact Us</h2>
+    <div class="loader"></div><br>
 
-    <form onsubmit="submitForm(event)">
-        <input type="text" placeholder="Your Name" required><br>
-        <input type="email" placeholder="Your Email" required><br>
-        <textarea placeholder="Your Message" required></textarea><br>
-        <button class="btn">Send Message</button>
-    </form>
+    <p>Please check back later.</p>
 
-    <p id="msg" style="color:green;"></p>
-</section>-->
-    <section id="contact">
-    <h2>Contact Us</h2>
-
-    <form id="leadForm" action="https://formsubmit.co/coreskilllearningcentre@gmail.com" method="POST">
-    <input type="hidden" name="_subject" value="New Data Analytics Lead - CoreSkill" />
-    <input type="hidden" name="_captcha" value="false" />
-    <input type="hidden" name="_template" value="table" />
-
-    <div>
-        <label for="fullName">Full Name</label><br>
-        <input type="text" id="fullName" name="name" placeholder="Enter your full name" required />
-        <small class="error-text" id="fullNameError"></small>
+    <div class="contact">
+        📧 Email: coreskilllearningcentre@gmail.com <br><br>
+        📍 UK Based Training Provider
     </div>
-
-    <div>
-        <label for="emailAddress">Email Address</label><br>
-        <input type="email" id="emailAddress" name="email" placeholder="Enter your email address" required />
-        <small class="error-text" id="emailAddressError"></small>
-    </div>
-
-    <div>
-        <label for="phoneNumber">Phone Number</label><br>
-        <input type="tel" id="phoneNumber" name="phone" placeholder="Enter your phone number" />
-        <small class="error-text" id="phoneNumberError"></small>
-    </div>
-
-    <div>
-        <label for="currentStatus">Current Status</label><br>
-        <select id="currentStatus" name="status" required style="width:90%; padding:10px; margin:10px 0;">
-            <option value="">Select your current status</option>
-            <option value="Student">Student</option>
-            <option value="Graduate">Graduate</option>
-            <option value="Job Seeker">Job Seeker</option>
-            <option value="Career Changer">Career Changer</option>
-            <option value="Working Professional">Working Professional</option>
-        </select>
-        <small class="error-text" id="currentStatusError"></small>
-    </div>
-
-    <div>
-        <label for="preferredContact">Preferred Contact Method</label><br>
-        <select id="preferredContact" name="preferred_contact" required style="width:90%; padding:10px; margin:10px 0;">
-            <option value="">Select one</option>
-            <option value="Email">Email</option>
-            <option value="Phone">Phone</option>
-            <option value="WhatsApp">WhatsApp</option>
-        </select>
-        <small class="error-text" id="preferredContactError"></small>
-    </div>
-
-    <div>
-        <label for="messageText">Why are you interested in this course?</label><br>
-        <textarea
-            id="messageText"
-            name="message"
-            placeholder="Tell us briefly why you are interested in the Data Analytics course"
-            required
-        ></textarea>
-        <small class="error-text" id="messageTextError"></small>
-    </div>
-
-    <button class="btn" type="submit" id="submitBtn">Send Enquiry</button>
-
-    <a
-        href="https://wa.me/447442795821?text=Hi%20I%20am%20interested%20in%20the%208-week%20Data%20Analytics%20course."
-        class="btn"
-        style="background:#25D366; color:#fff; text-decoration:none; display:inline-block; margin-left:10px;"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        Chat on WhatsApp
-    </a>
-</form>
-
-    <p id="formMessage" style="margin-top:15px; font-weight:600;"></p>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <p>© 2026 CoreSkill Learning Centre | UK</p>
-</footer>
-
-<!-- JAVASCRIPT 
-<script>
-    function scrollToContact() {
-        document.getElementById("contact").scrollIntoView();
-    }
-
-    function submitForm(e) {
-        e.preventDefault();
-        document.getElementById("msg").innerText = "Message sent successfully!";
-    }
-</script>-->
-   <script>
-    function scrollToContact() {
-        document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
-    }
-
-    const leadForm = document.getElementById("leadForm");
-    const formMessage = document.getElementById("formMessage");
-
-    const fields = {
-        fullName: document.getElementById("fullName"),
-        emailAddress: document.getElementById("emailAddress"),
-        phoneNumber: document.getElementById("phoneNumber"),
-        currentStatus: document.getElementById("currentStatus"),
-        preferredContact: document.getElementById("preferredContact"),
-        messageText: document.getElementById("messageText")
-    };
-
-    const errors = {
-        fullNameError: document.getElementById("fullNameError"),
-        emailAddressError: document.getElementById("emailAddressError"),
-        phoneNumberError: document.getElementById("phoneNumberError"),
-        currentStatusError: document.getElementById("currentStatusError"),
-        preferredContactError: document.getElementById("preferredContactError"),
-        messageTextError: document.getElementById("messageTextError")
-    };
-
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzqoVuqvy_T06fHp3hBGY9VlieoY4ZdJ3V-qFXjbbYzrvh1G_FD9NUxMwnI6IlwX2Bs/exec";
-
-    function setError(input, errorElement, message) {
-        input.classList.add("input-error");
-        input.classList.remove("input-success");
-        errorElement.textContent = message;
-    }
-
-    function setSuccess(input, errorElement) {
-        input.classList.remove("input-error");
-        input.classList.add("input-success");
-        errorElement.textContent = "";
-    }
-
-    function validateEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
-    }
-
-    function validateUKPhone(phone) {
-        return /^[0-9+\s()-]{8,20}$/.test(phone.trim());
-    }
-
-    function validateForm() {
-        let isValid = true;
-
-        const fullName = fields.fullName.value.trim();
-        const email = fields.emailAddress.value.trim();
-        const phone = fields.phoneNumber.value.trim();
-        const currentStatus = fields.currentStatus.value.trim();
-        const preferredContact = fields.preferredContact.value.trim();
-        const message = fields.messageText.value.trim();
-
-        if (fullName.length < 3) {
-            setError(fields.fullName, errors.fullNameError, "Please enter your full name.");
-            isValid = false;
-        } else {
-            setSuccess(fields.fullName, errors.fullNameError);
-        }
-
-        if (!validateEmail(email)) {
-            setError(fields.emailAddress, errors.emailAddressError, "Please enter a valid email address.");
-            isValid = false;
-        } else {
-            setSuccess(fields.emailAddress, errors.emailAddressError);
-        }
-
-        if (phone !== "" && !validateUKPhone(phone)) {
-            setError(fields.phoneNumber, errors.phoneNumberError, "Please enter a valid phone number.");
-            isValid = false;
-        } else {
-            setSuccess(fields.phoneNumber, errors.phoneNumberError);
-        }
-
-        if (currentStatus === "") {
-            setError(fields.currentStatus, errors.currentStatusError, "Please select your current status.");
-            isValid = false;
-        } else {
-            setSuccess(fields.currentStatus, errors.currentStatusError);
-        }
-
-        if (preferredContact === "") {
-            setError(fields.preferredContact, errors.preferredContactError, "Please select your preferred contact method.");
-            isValid = false;
-        } else {
-            setSuccess(fields.preferredContact, errors.preferredContactError);
-        }
-
-        if (message.length < 10) {
-            setError(fields.messageText, errors.messageTextError, "Please enter at least 10 characters.");
-            isValid = false;
-        } else {
-            setSuccess(fields.messageText, errors.messageTextError);
-        }
-
-        return isValid;
-    }
-
-    leadForm.addEventListener("submit", async function (e) {
-        e.preventDefault();
-
-        formMessage.textContent = "";
-        formMessage.className = "";
-
-        if (!validateForm()) {
-            formMessage.textContent = "Please fix the highlighted fields and try again.";
-            formMessage.className = "error";
-            return;
-        }
-
-      const payload = {
-    name: fields.fullName.value.trim(),
-    email: fields.emailAddress.value.trim(),
-    phone: fields.phoneNumber.value.trim(),
-    status: fields.currentStatus.value.trim(),
-    contact: fields.preferredContact.value.trim(),
-    message: fields.messageText.value.trim()
-};
-
-        try {
-            const response = await fetch(GOOGLE_SCRIPT_URL, {
-                method: "POST",
-                body: JSON.stringify(payload),
-                headers: {
-                    "Content-Type": "text/plain;charset=utf-8"
-                }
-            });
-
-            const result = await response.json();
-
-            if (result.result !== "success") {
-                throw new Error(result.message || "Google Sheets save failed.");
-            }
-console.log("Saved to sheet:", result);
-            formMessage.textContent = "Saved to sheet successfully. Sending email...";
-            formMessage.className = "success";
-            
-
-            leadForm.submit();
-
-        } catch (error) {
-            formMessage.textContent = "Excel save failed: " + error.message;
-            formMessage.className = "error";
-            console.error(error);
-        }
-    });
-</script>
+</div>
 
 </body>
 </html>
